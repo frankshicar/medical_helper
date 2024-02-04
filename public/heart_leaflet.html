@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      .flex-shrink-0 {
+          background-color: #f8f9fa; /* 輕柔的背景色 */
+          border-radius: 15px; /* 圓角效果 */
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 輕微的陰影 */
+          padding: 20px;
+      }
+  
+      .btn-toggle {
+          background-color: #d0cfe8; /* 亮藍色背景 */
+          color: rgb(0, 0, 0); /* 白色文字 */
+          margin-bottom: 10px; /* 按鈕間距 */
+      }
+  
+      .btn-toggle:hover {
+          background-color: #0056b3; /* 滑鼠懸停時的背景顏色 */
+      }
+  
+      .link-body-emphasis {
+          color: #ffffff; /* 亮藍色鏈接 */
+          font-weight: bold; /* 粗體字 */
+      }
+  
+      .list-unstyled {
+          padding-left: 0; /* 移除預設的左側間距 */
+      }
+  
+      .list-unstyled li a {
+          display: block; /* 讓鏈接佔滿整個區域 */
+          padding: 5px 10px; /* 鏈接的間距 */
+      }
+  
+      .list-unstyled li a:hover {
+          background-color: #e7e7e7; /* 滑鼠懸停時的背景顏色 */
+          border-radius: 10px; /* 圓角效果 */
+      }
+    
+    .custom-card {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+        background-color: #f2efe9; /* 米色背景 */
+        padding: 15px;
+    }
+  </style>
+  
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg " id="nav-color">
+        <a class="navbar-brand" href="test.html" style="font-weight: bold">
+        <img src="medical_icon.png" alt="Logo" width="40" height="40"> 醫療小幫手</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="test.html" style="font-weight: bold">
+                <img src="home_icon.png" alt="Logo" width="25" height="25"> 首頁</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="medical_form" href="medical_form.html" style="font-weight: bold">
+                  <img src="leaflet.png" alt="Logo" width="25" height="25"> 手術問卷</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="leaflets_change" href="health_leaflet.html" style="font-weight: bold">修改衛教單張</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="personal_medicalcare" href="personal_medicalcare.html" style="font-weight: bold">
+                <img src="personal_medical.png" alt="Logo" width="30" height="30"> 個人醫療</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="userinfo_change" href="user_info_modifiy.html" style="font-weight: bold">
+                  <img src="modify.png" alt="Logo" width="28" height="28"> 用戶基本資料修改</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" id="response" href="user_feedback.html" style="font-weight: bold">
+                  <img src="reply2.png" alt="Logo" width="30" height="30"> 回饋</a>
+            </li> 
+          </ul>
+          <div class="ms-auto">
+            <a class="btn btn-light" href="user_login.html" id="login-button">登入</a>
+            <a class="btn btn-light" href="signup.html" id="signup-button">註冊</a>
+            <a class="btn btn-light" href="#" id="logout-button" style="display: none;">登出</a>
+          </div>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> 
+        </div>
+    </nav>
+    <!--導覽頁-->
+    <div class=" mt-4">
+        <div class="row">
+            <div class="col-lg-3">
+              <div class="flex-shrink-0 p-3" style="width: 280px;">
+                <ul class="list-unstyled ps-0">
+                  <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                    護理指導
+                    </button>
+                    <div class="collapse show" id="home-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">目錄總覽</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">文件總覽</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">最新討論</a></li>
+                    </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    目錄/資料夾
+                </button>
+                    <div class="collapse" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">神經內科</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">神經外科</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">精神病</a></li>
+                        <li><a href="heart_leaflet.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">心臟內科</a></li>
+                        <li><a href="bone_leaflets.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">骨科</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">胸腔外科</a></li>
+                    </ul>
+                    </div>
+                </li>
+          
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    Account
+                    </button>
+                    <div class="collapse" id="account-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                    </ul>
+                    </div>
+                </li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+                <!-- 第四个主要内容区块 -->
+                <div class="col-lg-6 col-md-5 mb-5">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <h2 class="card-title" href="fake_leaflet_bone.html">心肌炎之照護</h2>
+                            <br>
+                            <img width="320" height="180" src="heart.png" />
+                            <p class="card-text">
+                                <strong>【本篇學習重點】</strong><br>
+                                1. 心肌炎在疾病初期會有類似感冒及腸胃症狀。<br> 
+                                2. 治療方式可以使用藥物或手術治療。<br>
+                                3. 預防感染及提升免疫力，是居家保健原則。<br> 
+                            </p>
+                            <div class="login-links">
+                                <a href="fake_leaflet_heart.html" class="link-primary">查看更多</a>
+                                
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+  // 檢查user是否登入
+  const admin = localStorage.getItem('admin'); // 直接获取字符串
+  const user = JSON.parse(localStorage.getItem('user'));
+  
+  if(admin){
+    // admin登入，顯示登入按鈕
+    document.getElementById('login-button').style.display = 'none';
+    document.getElementById('signup-button').style.display = 'none';
+    document.getElementById('logout-button').style.display = 'inline-block';
+    document.getElementById('userinfo_change').style.display = 'none';
+    document.getElementById('personal_medicalcare').style.display = 'none';
+    document.getElementById('medical_form').style.display = 'none';
+  
+  }else if (user) {
+    // user登入，顯示登入按鈕
+    document.getElementById('login-button').style.display = 'none';
+    document.getElementById('signup-button').style.display = 'none';
+    document.getElementById('logout-button').style.display = 'inline-block';
+    document.getElementById('leaflets_change').style.display = 'none';
+  
+  }else {
+    // user未登入，顯示登入及註冊按鈕
+    document.getElementById('login-button').style.display = 'inline-block';
+    document.getElementById('signup-button').style.display = 'inline-block';
+    document.getElementById('logout-button').style.display = 'none';
+    document.getElementById('userinfo_change').style.display = 'none';
+    document.getElementById('leaflets_change').style.display = 'none';
+    document.getElementById('medical_form').style.display = 'none';
+    document.getElementById('personal_medicalcare').style.display = 'none';
+    document.getElementById('response').style.display = 'none';
+  }
+  
+  
+  const logoutButton = document.getElementById('logout-button');
+  
+  logoutButton.addEventListener('click', function() {
+    // 检查localStorage中是否有admin信息
+    if (localStorage.getItem('admin')) {
+      localStorage.removeItem('admin'); // 移除管理员信息
+      window.location.href = 'manager_login.html'; // 跳转到管理员登录页面
+    } else if (localStorage.getItem('user')) {
+      localStorage.removeItem('user'); // 移除用户信息
+      window.location.href = 'user_login.html'; // 跳转到用户登录页面
+    }
+  });
+  
+  
+  </script>

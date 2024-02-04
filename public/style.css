@@ -1,0 +1,89 @@
+/* 將這段樣式加入到你的 style.css 檔案中 */
+
+/* 導覽列 */
+nav#nav-color {
+  background-color: #C8DCE3;
+}
+
+/* 用戶登入頁面 */
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-custom {
+  background-color: #a2d9f7;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+  background-color: #f3e1f7;
+  border: none;
+}
+
+.btn-plum {
+  background-color: #DDA0DD;
+  border-color: none;
+}
+
+/* 修改按鈕樣式 */
+.btn {
+  border: 2px solid #ffc107; /* 加黃色邊框 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 加淡陰影 */
+}
+
+.btn-primary {
+  background-color: #ffc107; /* 黃色背景 */
+  border-color: #ffc107; /* 黃色邊框 */
+  color: #212529; /* 按鈕文字的顏色 */
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* 深灰色背景 */
+  border-color: #6c757d; /* 深灰色邊框 */
+  color: #ffffff; /* 按鈕文字的顏色 */
+}
+
+.btn:hover {
+  background-color: #ffc107; /* 滑鼠懸停時的黃色背景 */
+  border-color: #ffc107; /* 滑鼠懸停時的黃色邊框 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 滑鼠懸停時的陰影效果 */
+}
+/* 將這段樣式加入到你的 style.css 檔案中 */
+
+.table {
+  border: 2px solid #6c757d; /* 灰色邊框 */
+  border-radius: 10px; /* 圓角效果 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+  background-color: #cce5ff; /* 淺藍色背景 */
+}
+
+.table th, .table td {
+  border: 2px solid #6c757d; /* 灰色邊框 */
+  padding: 10px; /* 內邊距 */
+}
+
+.table th {
+  background-color: #0056b3; /* 深藍色背景 */
+  color: #ffffff; /* 文字顏色 */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #cce5ff; /* 淺藍色背景 */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #fff7e6; /* 淺鵝黃色背景 */
+}
+
+
+
+
+
+
