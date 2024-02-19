@@ -81,10 +81,10 @@
     fetch('/api/leaflet_title')
     .then(response => response.json())
     .then(leaflets => {
-      leaflets.forEach(leaflet => {
+      leaflets.forEach(leaflett => {
         const option = document.createElement('option');
-        option.value = leaflet.leaflet_title;
-        option.textContent = leaflet.leaflet_title;
+        option.value = leaflett.leaflet_title;
+        option.textContent = leaflett.leaflet_title;
         questionSelect.appendChild(option);
       });
 

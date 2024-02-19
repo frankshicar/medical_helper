@@ -78,6 +78,10 @@
           <input type="file" class="form-control" name="image" required>
           <label class="form-label" for="customFile"></label>
         </div>
+        <div class="col-md-6">
+          <label for="leaflet_img" class="form-label">衛教單張圖片:</label>
+          <img id="leafletImage" src="" alt="" width="400" height="300">
+        </div>
         <div class="col-md-6 mb-3">
           <label for="leaflet_txt" class="form-label">輸入內容:</label>
           <textarea class="form-control" id="leaflet_txt" name="leaflet_txt" placeholder="Text" required style="width: 700px; height: 200px;"></textarea>
@@ -96,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const questionSelect = document.getElementById('questionSelect');
   const titleInput = document.querySelector('input[name="leaflet_title"]');
   const contentTextarea = document.querySelector('textarea[name="leaflet_txt"]');
-  const imageInput = document.querySelector('input[type="file"]');
+  const imageDisplay = document.getElementById('leafletImage'); // 使用 id 選擇 img 元素
+
 
   questionSelect.addEventListener('change', function() {
     const selectedTitle = questionSelect.value;
@@ -114,9 +119,16 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.json();
     })
     .then(data => {
-      titleInput.value = data.leaflet_title; 
-      contentTextarea.value = data.leaflet_txt; 
-    })
+  titleInput.value = data.leaflet_title; 
+  contentTextarea.value = data.leaflet_txt; 
+
+    // 直接使用字符串分割来获取文件名
+    const segments = data.leaflet_img.split('/');
+    const filename = segments[segments.length - 1]; // 获取最后一个部分作为文件名
+
+    imageDisplay.src = '/uploads/' + filename; // 设置 img 的 src
+  })
+
     .catch(error => console.error('Error:', error));
   }
   // 顯示衛教單選項
